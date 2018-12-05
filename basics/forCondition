@@ -1,0 +1,51 @@
+<!--Note that these codes are tested on online edit Called JSFIDDLE --> https://jsfiddle.net/fhe0dwvm/51/-->
+<!-- Html--> 
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="app">
+  <ul>
+    <li v-for="ingredient in ingredients">
+      {{ingredient}}
+    </li>
+  </ul>
+  <!-- with index -->
+  <ul>
+   <li v-for="(ingredient,index) in ingredients" v-bind:key="ingredient">
+      {{index}}. {{ingredient}}
+    </li>
+  </ul>
+  <button v-on:click="ingredients.push('spices')">
+  Add New
+  </button>
+  <!-- looping through objects-->
+  <ul>
+    <li v-for="person in persons">
+      {{person}}
+    </li>
+  </ul>
+  <!-- or -->
+  <ul>
+    <li v-for="person in persons">
+      <span v-for="value in person">{{value}}</span>
+    </li>
+  </ul> 
+  <!-- or -->
+  <ul>
+    <li v-for="person in persons">
+      <div v-for="(value,key) in person">{{key}}: {{value}}</div>
+    </li>
+  </ul>
+</div>
+
+<!--JavaScript-->
+
+new Vue({
+	el: '#app',
+ 	data:{
+  	ingredients:['meat','fruit','vegetable'],
+    persons:[
+    	{name:'rujal', age:27, color:'red'},
+      {name:'lajur', age:72, color:'blue'}
+    ]
+  }
+});

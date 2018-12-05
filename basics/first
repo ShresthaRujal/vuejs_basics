@@ -1,0 +1,68 @@
+<!--Note that these codes are tested on online edit Called JSFIDDLE --> https://jsfiddle.net/fhe0dwvm/51/-->
+<!-- Html--> 
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="app">
+
+<button v-on:click="increase">
+Click me
+</button>
+{{counter}} <br/> OR This :
+<button v-on:click="counter++">Increase</button>
+<button v-on:click="counter--">decrease</button>
+<button v-on:click="secondcounter++">IncreaseSecond</button><br/>
+Counter: {{counter}} | {{secondcounter}}
+Result:{{output}}| {{result()}}
+<hr>
+<p v-on:mousemove="updateCoordinate">
+Coordinates:{{x}}/{{y}} - <span v-on:mousemove.stop="dummy">DEAD SPOT</span>
+<input type="text" v-on:keyup.enter.space="alertMe">
+</p>
+<input type="text" v-model="name">{{name}}
+</div>
+    
+  
+<!-- Java script -->
+  
+  new Vue({
+	el: '#app',
+  data:{
+  	counter:0,
+    secondcounter:0,
+    x:0,
+    y:0,
+    name:'Rujal'
+  },
+  computed:{
+  	output:function(){
+    	console.log("computed")
+    	return this.counter>5 ? 'Greater than 5':'Smaller than 5';
+    }
+  },
+  watch:{
+  	counter:function(value){
+    	var vm= this;
+      setTimeout(function(){
+      	vm.counter=0;
+      },2000);
+    }
+  },
+  methods:{
+  	increase: function(){
+    	this.counter=this.counter+1;
+      return this.counter;
+    },
+    updateCoordinate:function(event){
+    	this.x = event.clientX;
+      this.y = event.clientY;
+    },
+   alertMe:function(){
+   	alert('Alert!');
+   },
+   result:function(){
+   		console.log("method")
+   		return this.counter>5 ? 'Greater than 5':'Smaller than 5';
+   }
+  }
+});
+  

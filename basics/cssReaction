@@ -1,0 +1,58 @@
+<!--Note that these codes are tested on online edit Called JSFIDDLE --> https://jsfiddle.net/fhe0dwvm/51/-->
+<!-- Html--> 
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="app">
+  <div class="demo":style="{backgroundColor:color}">
+  
+  </div>
+   <div class="demo" :style="myStyle">
+  
+  </div>
+   <div class="demo" :class="{blue: attachBlue}">
+  
+  </div>
+  
+  <input type="text" v-model="color">
+  <input type="text" v-model="width">
+</div>
+
+<!--JavaScript-->
+new Vue({
+	el: '#app',
+ 	data:{
+  	color: 'gray',
+    width: 100
+  },
+  computed:{
+  	myStyle: function(){
+  		return{
+  			backgroundColor: this.color,
+        width: this.width + 'px'
+  		};	
+  	}
+  }
+});
+
+<!--Css-->
+.demo{
+    width:100px;
+    height:100px;
+    backgroundColor:gray;
+    display:inline-block;
+    margin:10px;
+}
+
+.red{
+    backgroundColor:red;
+}
+
+
+.green{
+    backgroundColor:green;
+}
+
+
+.blue{
+    backgroundColor:blue;
+}
