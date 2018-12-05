@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Instance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+    <div id="app">
+        <p>First Instance Title: {{title}}</p>
+    </div>
+    <hr>
+    <div id="app2">
+        <p>Second Instance Title: {{title}}</p>
+        <p>FirstInstance Title inside secondInstance title: {{getTitleOfFirstInstance()}}</p>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html> 
