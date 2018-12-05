@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+    <div id="app">
+        <div class="row">
+            <div class="small-6 columns">
+                <h1 class="text-center">YOU  {{damagedPlayerHealth}} </h1>
+                <div class="healthbar">
+                    <div class="healthbar text-center" style="background-color: green;margin: 0;color: white;"
+                    v-bind:style="{width: playerHealth+ '%'}">
+                          {{playerHealth}} 
+                    </div>
+                </div>
+            </div>
+            <div class="small-6 columns">
+                <h1 class="text-center">MOSTER  {{damagedMonsterHealth}}</h1>
+                <div class="healthbar">
+                    <div class="healthbar text-center" style="background-color: green;margin: 0;color: white;"
+                    v-bind:style="{width:monsterHealth+ '%'}">
+                        {{monsterHealth}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row-controls" v-if="!gameIsRunning">
+            <div class="small-12 columns">
+                <button id="start-game" v-on:click="startGame">START NEW GAME</button>
+            </div>
+        </div>
+
+        <div class="row controls" v-else>
+            <div class="small-12 columns">
+                <button id="attack" @click="attack">ATTACK</button>
+                <button id="special-attack" @click="specialAttack">SPECIAL ATTACK</button>
+                <button id="heal" @click="heal">HEAL</button>
+                <button id="giveup" @click="giveUp">GIVE UP</button>
+            </div>
+        </div>
+
+        <div class="row log">
+            <div class="small-12 columns">
+                <ul>
+                    <li>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+    <script src="app.js"></script>
+</body>
+</html> 
