@@ -1,12 +1,12 @@
 var fisrtInstance = new Vue({
-    el:'#app',
+    el:'#app1',
     data:{
         title:"Its the First Instance"     
     }
 });
 
 var secondInstance = new Vue({
- el:'#app2',
+ el:'#app2', 
  data:{
      title:"Its the Second Instance"
  },
@@ -16,3 +16,20 @@ var secondInstance = new Vue({
      }
  }
 });
+
+var vm3 = new Vue({
+    template:'<h2>Hello</h2>'
+});
+vm3.$mount('#app4');
+
+Vue.component('hello', {
+  template: '<h2>Hello</h2>'
+})
+
+new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue.js!'
+  }
+});
+  

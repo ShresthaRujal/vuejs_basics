@@ -5,18 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Instance</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+    <!-- <script src="https://npmcdn.com/vue/dist/vue.js"></script> -->
     <link rel="stylesheet" href="css/app.css" />
+    <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
-    <div id="app">
+    <h1>Instance</h1>
+    <div id="app1">
         <p>First Instance Title: {{title}}</p>
+        <hello></hello>
     </div>
     <hr>
     <div id="app2">
         <p>Second Instance Title: {{title}}</p>
         <p>FirstInstance Title inside secondInstance title: {{getTitleOfFirstInstance()}}</p>
+        
     </div>
+    <h1>Component</h1>
+    <div id="app4"></div>
+    <div id="app">
+            <hello></hello>
+    </div>
+<hello></hello>
+
     <script src="app.js"></script>
 </body>
 </html> 
