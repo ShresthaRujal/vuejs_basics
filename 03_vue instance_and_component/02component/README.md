@@ -1,6 +1,5 @@
-# vueproject
-
-> A Vue.js project
+# vuecomponentcli
+> A Vue.js project with CLI
 
 ## Build Setup
 
