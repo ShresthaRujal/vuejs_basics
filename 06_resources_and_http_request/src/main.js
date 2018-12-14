@@ -9,6 +9,7 @@ Vue.http.options.root='https://testproject-b7cef.firebaseio.com/';
 
 Vue.http.interceptors.push((request,next) => {
   console.log(request.method);
+  next();
 });
 
 new Vue({
